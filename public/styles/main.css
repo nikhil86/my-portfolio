@@ -26,6 +26,7 @@ body{
     background: transparent;
     position: absolute;
     top: 18%;
+    z-index: 3;
     left: 25%;
     width: 60vw;
     font-size: 3rem;
