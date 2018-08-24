@@ -1,0 +1,91 @@
+html {
+    height:100%;
+}
+
+body{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+@-webkit-keyframes animateWord {
+    0% { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; -webkit-transform: translateY(30px);}
+}
+
+
+.intro-section {
+    height: 100vh;
+    width: 100%;
+    background:#63D0FF;
+    font-family: Permanent Marker, serif;
+}
+
+.content {
+    background: transparent;
+    position: absolute;
+    top: 18%;
+    z-index: 10;
+    left: 25%;
+    width: 60vw;
+    font-size: 3rem;
+    -webkit-animation: animateWord 2s linear 1 alternate;
+    -ms-animation: animateWord 2s linear 1 alternate;
+    animation: animateWord 2s linear 1 alternate;
+    animation-fill-mode: forwards
+}
+
+@media only screen and (max-width: 400px) {
+    .content {
+        top: 27%;
+        left: 5%;
+        width: 90vw;
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .content {
+        top: 30%;
+        left: 20%;
+        width: 70vw;
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}
+
+#wrapper {
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+#clouds{
+    background:url("../images/clouds.png") repeat-x 0 bottom #ACE6FF;
+    width:100%;
+    height:230px;
+    min-height:230px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+
+#ground {
+    background:url("../images/grass.png") repeat-x 0 0 transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index:2;
+    width: 100%;
+    height: 192px;
+    min-height:192px;
+    border:0 none transparent;
+    outline:0 none transparent;
+}
