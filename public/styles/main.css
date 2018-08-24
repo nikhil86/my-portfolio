@@ -26,19 +26,18 @@ body{
     background: transparent;
     position: absolute;
     top: 18%;
-    z-index: 10;
     left: 25%;
     width: 60vw;
     font-size: 3rem;
-    -webkit-animation: animateWord 2s linear 1 alternate;
-    -ms-animation: animateWord 2s linear 1 alternate;
-    animation: animateWord 2s linear 1 alternate;
-    animation-fill-mode: forwards
+    /*-webkit-animation: animateWord 2s linear 1 alternate;*/
+    /*-ms-animation: animateWord 2s linear 1 alternate;*/
+    /*animation: animateWord 2s linear 1 alternate;*/
+    /*animation-fill-mode: forwards*/
 }
 
 @media only screen and (max-width: 400px) {
     .content {
-        top: 27%;
+        top: 2%;
         left: 5%;
         width: 90vw;
         font-size: 2rem;
