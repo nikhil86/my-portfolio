@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       backgroundPosition: "1301px 0px",
       force3D:true,
       rotation:0.01,
-      z:0.01,
       autoRound:false,
       ease: Linear.easeNone
     });
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       backgroundPosition: "-2247px bottom",
       force3D:true,
       rotation:0.01,
-      z:0.01,
       ease: Linear.easeNone
     });
 
