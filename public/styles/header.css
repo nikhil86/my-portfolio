@@ -10,6 +10,16 @@
     cursor: pointer;
 }
 
+@keyframes big {
+    from {font-size: inherit;}
+    to {font-size: 1.3rem;}
+}
+
+@keyframes small {
+    from {font-size: 1.3rem;}
+    to {font-size: inherit;}
+}
+
 .header .item.active {
     color: #e91e63;
     font-size: 1.3rem;
@@ -17,7 +27,8 @@
     -ms-transition:color .2s ease-out, background 1s ease-in;
     -moz-transition:color .2s ease-out, background 1s ease-in;
     -webkit-transition:color .2s ease-out, background 1s ease-in;
-    transition:color .9s ease-out, font-size .9s ease-out, background 1s ease-in;
+    transition:color .9s ease-out, background 1s ease-in;
+    animation: big 1s;
 }
 
 .header .item.fade {
@@ -27,7 +38,8 @@
     -ms-transition:color .2s ease-out, background 1s ease-in;
     -moz-transition:color .2s ease-out, background 1s ease-in;
     -webkit-transition:color .2s ease-out, background 1s ease-in;
-    transition:color .9s ease-out, font-size .9s ease-out, background 1s ease-in;
+    transition:color .9s ease-out, background 1s ease-in;
+    animation: small 1s;
 }
 
 .header {
