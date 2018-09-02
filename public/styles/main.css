@@ -26,32 +26,32 @@ body{
 
 .content {
     background: transparent;
-    position: absolute;
-    top: 18%;
     z-index: 10;
-    left: 25%;
-    width: 60vw;
     font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 150px;
     -webkit-animation: animateWord 2s linear 1 alternate;
     -ms-animation: animateWord 2s linear 1 alternate;
     animation: animateWord 2s linear 1 alternate;
     animation-fill-mode: forwards
 }
 
-@media only screen and (max-width: 400px) {
+.content div {
+    text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
     .content {
-        top: 27%;
-        left: 5%;
-        width: 90vw;
         font-size: 2rem;
     }
 }
 
 @media only screen and (min-width: 768px) {
     .content {
-        top: 30%;
-        left: 20%;
-        width: 70vw;
         font-size: 3rem;
     }
 }
@@ -64,6 +64,7 @@ body{
 
 #wrapper {
     position:relative;
+    display: flex;
     width:100%;
     height:100%;
 }

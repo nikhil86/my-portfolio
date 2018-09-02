@@ -51,10 +51,6 @@
     z-index: 99;
 }
 
-.content {
-    padding: 16px;
-}
-
 .sticky {
     position: fixed;
     top: 0;
