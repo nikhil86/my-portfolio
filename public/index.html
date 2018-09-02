@@ -6,39 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
   <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/header.css">
 </head>
 <body>
-
-
-<div class="intro-section section">
-  <div id="wrapper">
-    <div id="clouds"></div>
-    <div id="ground"></div>
-  </div>
-  <div class="content">
-    <div class="line-1">
-      Hi. I'm <span>Nikhil Madhav,</span>
+  <div class="intro-section section">
+    <div id="wrapper">
+      <div id="clouds"></div>
+      <div id="ground"></div>
     </div>
-    <div>
-      And I'm a full-stack Web Developer
+    <div class="content">
+      <div class="line-1">
+        Hi. I'm <span>Nikhil Madhav,</span>
+      </div>
+      <div>
+        And I'm a full-stack Web Developer
+      </div>
     </div>
   </div>
-</div>
-
-<div class="skills-section section">
-  Here is where my sills would go!!
-</div>
-
-<div class="another-section section">
-  Additional nonsense here!!
-</div>
-
-<div class="one-more-section section">
-  some more stupid stuff
-</div>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  <div class="header" id="myHeader">
+    <span data-section-number="1" data-section="intro-section" class="item active">Home</span>
+    <span data-section-number="2" data-section="skills-section" class="item">Skills</span>
+    <span data-section-number="3" data-section="projects-section" class="item">Projects</span>
+  </div>
+  <div class="skills-section section">
+    Here is where my sills would go!!
+  </div>
+  <div class="projects-section section">
+    Additional Projects here!!
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  <script src="./js/background-move.js"></script>
+  <script src="./js/scroll.js"></script>
 </body>
-<script src="./js/background-move.js"></script>
-<script src="./js/scroll.js"></script>
 </html>

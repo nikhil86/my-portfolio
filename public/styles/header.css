@@ -1,0 +1,38 @@
+.header {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: Permanent Marker, serif;
+}
+
+.header .item {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.header .item.active {
+    color: #e91e63;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    background: #1B242F;
+    border-bottom: 3px solid #04C2C9;
+    text-align: left;
+    z-index: 99;
+}
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.sticky + .content {
+    padding-top: 102px;
+}
