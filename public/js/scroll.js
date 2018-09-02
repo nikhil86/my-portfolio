@@ -1,3 +1,7 @@
+function isMobileDevice() {
+  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
+
 const easings = {
   linear(t) {
     return t;
@@ -61,7 +65,7 @@ window.requestAnimFrame = (function(){
     };
 })();
 
-function scrollToY(scrollTargetY = 0, duration, easing, clickedItem) {
+function scrollToY(scrollTargetY = 0, duration, easing) {
   const scrollY = window.scrollY;
   const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
 
@@ -97,10 +101,23 @@ const onItemClick = function (e) {
   scrollIt(document.querySelector(`.${section}`), sectionNumber, 900, 'easeInOutQuint', target);
 };
 
-const elements = document.querySelectorAll('.item');
-for(let i = 0; i < elements.length; i++) {
-  const element = elements[i];
-  element.onclick = onItemClick;
+const setUpHeaderClick = function () {
+  const elements = document.querySelectorAll('.item');
+  for(let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.onclick = onItemClick;
+  }
+}
+
+const updateActiveClass = function () {
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+  const headerClassNames = header.className;
+  const headerIsSticky =  headerClassNames.indexOf('sticky') > -1;
+  const activeSection = Math.floor((headerIsSticky ? window.scrollY + header.offsetHeight : window.scrollY) / windowHeight);
+  const activeHeaderElement = document.querySelectorAll('.item')[activeSection];
+  if (activeHeaderElement.className.indexOf('active') === -1) {
+    toggleActiveClass(activeHeaderElement);
+  }
 }
 
 const header = document.getElementById('myHeader');
@@ -112,4 +129,11 @@ function myFunction() {
     header.classList.remove('sticky');
   }
 }
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {
+  myFunction();
+  updateActiveClass();
+};
+
+if (!isMobileDevice()) {
+  setUpHeaderClick();
+}
