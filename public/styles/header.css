@@ -17,7 +17,7 @@
     -ms-transition:color .2s ease-out, background 1s ease-in;
     -moz-transition:color .2s ease-out, background 1s ease-in;
     -webkit-transition:color .2s ease-out, background 1s ease-in;
-    transition:all .9s ease-out, background 1s ease-in;
+    transition:color .9s ease-out, background 1s ease-in;
 }
 
 .header .item.fade {
@@ -27,7 +27,7 @@
     -ms-transition:color .2s ease-out, background 1s ease-in;
     -moz-transition:color .2s ease-out, background 1s ease-in;
     -webkit-transition:color .2s ease-out, background 1s ease-in;
-    transition:all .9s ease-out, background 1s ease-in;
+    transition:color .9s ease-out, background 1s ease-in;
 }
 
 .header {
