@@ -1,3 +1,4 @@
+let scrolling = false;
 function isMobileDevice() {
   return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 };
@@ -45,6 +46,7 @@ const easings = {
 };
 
 function scrollIt(destination, sectionNumber, duration = 200, easing = 'easeInOutQuint', clickedItem) {
+  scrolling = true;
   const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
   let destinationOffsetToScroll = (sectionNumber - 1) * windowHeight;
   const headerClassNames = header.className;
@@ -78,6 +80,7 @@ function scrollToY(scrollTargetY = 0, duration, easing) {
       window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
     } else {
       console.log('scroll done');
+      scrolling = false;
       window.scrollTo(0, scrollTargetY);
     }
   }
@@ -110,6 +113,9 @@ const setUpHeaderClick = function () {
 }
 
 const updateActiveClass = function () {
+  if (scrolling) {
+    return;
+  }
   const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
   const headerClassNames = header.className;
   const headerIsSticky =  headerClassNames.indexOf('sticky') > -1;
