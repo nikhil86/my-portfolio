@@ -12,6 +12,22 @@
 
 .header .item.active {
     color: #e91e63;
+    font-size: 1.3rem;
+    -o-transition:color .2s ease-out, background 1s ease-in;
+    -ms-transition:color .2s ease-out, background 1s ease-in;
+    -moz-transition:color .2s ease-out, background 1s ease-in;
+    -webkit-transition:color .2s ease-out, background 1s ease-in;
+    transition:all .9s ease-out, background 1s ease-in;
+}
+
+.header .item.fade {
+    color: white;
+    font-size: inherit;
+    -o-transition:color .2s ease-out, background 1s ease-in;
+    -ms-transition:color .2s ease-out, background 1s ease-in;
+    -moz-transition:color .2s ease-out, background 1s ease-in;
+    -webkit-transition:color .2s ease-out, background 1s ease-in;
+    transition:all .9s ease-out, background 1s ease-in;
 }
 
 .header {
@@ -35,4 +51,10 @@
 
 .sticky + .content {
     padding-top: 102px;
+}
+
+@media only screen and (max-width: 480px) {
+    .header {
+        justify-content: space-between;
+    }
 }

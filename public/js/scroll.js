@@ -40,7 +40,7 @@ const easings = {
   }
 };
 
-function scrollIt(destination, sectionNumber, duration = 200, easing = 'easeInOutQuint') {
+function scrollIt(destination, sectionNumber, duration = 200, easing = 'easeInOutQuint', clickedItem) {
   const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
   let destinationOffsetToScroll = (sectionNumber - 1) * windowHeight;
   const headerClassNames = header.className;
@@ -49,7 +49,7 @@ function scrollIt(destination, sectionNumber, duration = 200, easing = 'easeInOu
     destinationOffsetToScroll = destinationOffsetToScroll - header.offsetHeight;
   }
 
-  scrollToY(destinationOffsetToScroll, duration, easing);
+  scrollToY(destinationOffsetToScroll, duration, easing, clickedItem);
 }
 
 window.requestAnimFrame = (function(){
@@ -61,7 +61,7 @@ window.requestAnimFrame = (function(){
     };
 })();
 
-function scrollToY(scrollTargetY = 0, duration, easing) {
+function scrollToY(scrollTargetY = 0, duration, easing, clickedItem) {
   const scrollY = window.scrollY;
   const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
 
@@ -81,12 +81,20 @@ function scrollToY(scrollTargetY = 0, duration, easing) {
   tick();
 }
 
+const toggleActiveClass = function (target) {
+  const currentActiveElement = document.querySelector('.active');
+  currentActiveElement.classList.remove('active');
+  currentActiveElement.classList.add('fade');
+  target.classList.remove('fade');
+  target.classList.add('active');
+}
+
 const onItemClick = function (e) {
   const target = e.currentTarget;
   const section = target.getAttribute('data-section');
   const sectionNumber = target.getAttribute('data-section-number');
-
-  scrollIt(document.querySelector(`.${section}`), sectionNumber, 900, 'easeInOutQuint');
+  toggleActiveClass(target);
+  scrollIt(document.querySelector(`.${section}`), sectionNumber, 900, 'easeInOutQuint', target);
 };
 
 const elements = document.querySelectorAll('.item');

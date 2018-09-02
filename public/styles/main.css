@@ -80,6 +80,7 @@ body{
 }
 
 #ground {
+    background-attachment: fixed;
     background:url("../images/grass.png") repeat-x 0 0 transparent;
     position: absolute;
     bottom: 0;
